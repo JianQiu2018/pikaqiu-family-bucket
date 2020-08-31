@@ -1,0 +1,86 @@
+#日志级别
+logging:
+  level:
+    com.pikaqiu.weixinapplet: debug
+
+
+#spring:
+#  datasource:
+#    # 动态数据源配置
+#    master:
+#      url: jdbc:mysql://xx.xx.xx.xx:xxxx/xxxx?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=round
+#      username: xxxx
+#      password: xxxx
+#      type: com.zaxxer.hikari.HikariDataSource
+#    cluster:
+#      # - 代表list语法
+#    - key: slave
+#      url: jdbc:mysql://xx.xx.xx.xx:3306/xxxx?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=round
+#      username: xxxx
+#      password: xxxx
+#      type: com.zaxxer.hikari.HikariDataSource
+
+spring:  #集成ByteTcc分布式事务框架，只能使用单数据源，不支持动态数据源
+  datasource:
+    url: jdbc:mysql://xx.xx.xx.xx:3306/xxxx?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=round&autoReconnect=true
+    username: xxxx
+    password: xxxx
+    type: org.apache.commons.dbcp2.BasicDataSource  #必须制定type类型，不然会报错
+  # 缓冲10s,优雅停机
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+  #JPA配置
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update #仅在第一次创建数据库表使用
+  security:
+    user:
+      name: xxxx
+      password: xxxx
+  redis:
+    host: xx.xx.xx.xx
+    port: 6379
+    password: xxxxx
+    maxActive: 300
+    maxIdle: 100
+    maxWait: 50000
+  #开启 Elasticsearch 仓库(默认值:true)
+  #9200作为Http协议，主要用于外部通讯;9300作为Tcp协议，jar之间就是通过tcp协议通讯;ES集群之间是通过9300进行通讯
+  elasticsearch:
+    rest:
+      uris: ["xx.xx.xx.xx:9200"]
+      connection-timeout: 500000
+  data:
+    redis:
+      repositories:
+        enabled: false
+    elasticsearch:
+      repositories:
+        enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    #多网卡定制IP,docker部署推荐
+    prefer-ip-address: true
+
+file:
+  uploadPath: /work/files/static/images/
+  domain: http://pkqing.cn/
+
+
+common:
+  id:
+    dataCenterId: 0
+    workId: ${random.int[1,30]}
+  property:
+    desc: "我就是个描述"
+    name: "hello,qiujian"
+
+authorization:
+  interceptor:
+    ignored-url: /api/admin/authUser/**,/api/admin/article/**,/api/admin/music/**,/api/admin/upload/**,/api/admin/carouselPic/**,/api/home/**,/api/byteTcc/**,/api/admin/articleEs/**

@@ -1,0 +1,7 @@
+{
+  "name": "PikaQiu接口文档",
+  "version": "1.0.0",
+  "description": "文档说明: \n 前端请求时所有接口地址前面均需要加上 '/wenxin/v1.0' 前缀 \n 例如：/api/admin/article/getHomeArticleList --> /weixin/v1.0/api/admin/article/getHomeArticleList ",
+  "title": "PikaQiu->ApiDoc",
+  "url" : "http://pkqing.cn:8083"
+}

@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: pikaqiu-family-bucket
+  cloud:
+    config:
+      # spring.cloud.config.label 指明远程仓库的分支
+      label: master
+      # spring.cloud.config.profile
+      #  dev 开发环境配置文件
+      #  test 测试环境
+      #  pro 正式环境
+      profile: dev
+      uri: http://localhost:8088/
