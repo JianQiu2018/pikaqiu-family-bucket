@@ -8,7 +8,7 @@ pikaqiu-family-bucket项目致力于打造一个完整的分布式系统，采�
 目前只有后端接口，前端需自行开发;欢迎大家一起学习,共同进步！  
 PS:启动类有很多注释,动态数据源与ByteTcc框架引入都已注释，需要的话可以私聊，只需简单几步即可使用  
 PS:需要容器打包的同学，Dockerfile已写好，可修改下邮箱地址即可使用  
-PS:项目中配置文件中含有xx or xxxx 的地方，需要自己去配置 
+PS:项目中配置文件中含有xx or xxxx 的地方，需要自己去配置  
 PS:想学习手写starter的同学，将pom.xml文件注释打开后，在自己的maven仓库下建地址\com\pikaqiu\starter\common-property-spring-boot-starter\1.0-SNAPSHOT 文件；将依赖jar已经放在了 /resoures/static文件下,然后放入该地址中即可。
 ![Image text](https://raw.githubusercontent.com/JianQiu2018/pikaqiu-family-bucket/master/src/main/resources/images/packeage.jpg)
 
