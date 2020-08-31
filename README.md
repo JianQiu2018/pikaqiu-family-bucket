@@ -10,7 +10,7 @@ PS:启动类有很多注释,动态数据源与ByteTcc框架引入都已注释，
 PS:需要容器打包的同学，Dockerfile已写好，可修改下邮箱地址即可使用  
 PS:项目中配置文件中含有xx or xxxx 的地方，需要自己去配置 
 PS:想学习手写starter的同学，将pom.xml文件注释打开后，在自己的maven仓库下建地址\com\pikaqiu\starter\common-property-spring-boot-starter\1.0-SNAPSHOT 文件；将依赖jar已经放在了 /resoures/static文件下,然后放入该地址中即可。
-
+![Image text](https://raw.githubusercontent.com/JianQiu2018/pikaqiu-family-bucket/master/src/main/resources/images/packeage.jpg)
 
 #项目启动流程  
 1.你需要先启动一个服务注册中心,这个不需要手写，网上很多已经存在的eureka服务下载下来，启动起来即可；学习springcloud第一步就是启动eureka-server,不清楚的需要先了解这部分知识  
