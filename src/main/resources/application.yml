@@ -3,7 +3,6 @@ logging:
   level:
     com.pikaqiu.weixinapplet: debug
 
-
 #spring:
 #  datasource:
 #    # 动态数据源配置
@@ -79,8 +78,9 @@ common:
     workId: ${random.int[1,30]}
   property:
     desc: "我就是个描述"
-    name: "hello,qiujian"
+    name: "hello,pikaqiu"
 
+#配置接口地址可放行
 authorization:
   interceptor:
     ignored-url: /api/admin/authUser/**,/api/admin/article/**,/api/admin/music/**,/api/admin/upload/**,/api/admin/carouselPic/**,/api/home/**,/api/byteTcc/**,/api/admin/articleEs/**

@@ -1,9 +1,14 @@
-# pikaqiu-family-bucket
+# pikaqiu-family-bucket  
+
+#个性签名
+****楚虽三户，亡秦必楚****
 
 前言
 pikaqiu-family-bucket项目致力于打造一个完整的分布式系统，采用现阶段流行技术实现。
 目前只有后端接口，前端需自行开发;欢迎大家一起学习,共同进步！
 PS:启动类有很多注释,动态数据源与ByteTcc框架引入都已注释，需要的话可以私聊，只需简单几步即可使用
+PS:需要容器打包的同学，Dockerfile已写好，可修改下邮箱地址即可使用
+PS:项目中配置文件中含有xx or xxxx 的地方，需要自己去配置
 
 # 项目介绍
 该项目是基于springcloud + springboot + mysql实现。
