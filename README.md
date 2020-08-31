@@ -14,7 +14,7 @@ PS:想学习手写starter的同学，将pom.xml文件注释打开后，在自己
 
 # 项目启动流程  
 1.你需要先启动一个服务注册中心,这个不需要手写，网上很多已经存在的eureka服务下载下来，启动起来即可；学习springcloud第一步就是启动eureka-server,不清楚的需要先了解这部分知识  
-2.修改/resoures文件下的application.yml文件配置，把mysql，redis,elasticsearch先关xxxx的地方改掉即可  
+2.修改/resoures文件下的application.yml文件配置，把mysql,redis,elasticsearch把涉及xxxx的地方改掉即可  
 3.正常启动，启动后还有问题的可以在git上提问  
 
 # 项目介绍  
