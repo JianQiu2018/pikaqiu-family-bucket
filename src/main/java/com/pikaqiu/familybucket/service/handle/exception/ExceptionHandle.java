@@ -1,8 +1,7 @@
-package com.pikaqiu.familybucket.exception.handle;
+package com.pikaqiu.familybucket.service.handle.exception;
 
 import com.pikaqiu.familybucket.constants.ErrorCode;
 import com.pikaqiu.familybucket.dto.HttpResponse;
-import com.pikaqiu.familybucket.exception.UserException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

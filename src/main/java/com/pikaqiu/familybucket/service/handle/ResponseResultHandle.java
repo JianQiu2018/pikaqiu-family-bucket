@@ -1,4 +1,4 @@
-package com.pikaqiu.familybucket.exception.handle;
+package com.pikaqiu.familybucket.service.handle;
 
 import com.pikaqiu.familybucket.annotation.ResponseResultBody;
 import com.pikaqiu.familybucket.dto.HttpResponse;

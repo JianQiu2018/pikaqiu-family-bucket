@@ -8,7 +8,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.pikaqiu.familybucket.constants.Constants;
 import com.pikaqiu.familybucket.constants.ErrorCode;
 import com.pikaqiu.familybucket.entities.AuthUser;
-import com.pikaqiu.familybucket.exception.UserException;
+import com.pikaqiu.familybucket.service.handle.exception.UserException;
 import com.pikaqiu.familybucket.repository.AuthUserRepository;
 import com.pikaqiu.familybucket.annotation.PassToken;
 import lombok.extern.slf4j.Slf4j;

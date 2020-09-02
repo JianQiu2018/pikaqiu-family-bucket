@@ -8,7 +8,7 @@ import com.pikaqiu.familybucket.dto.AuthUserDTO;
 import com.pikaqiu.familybucket.entities.AuthUser;
 import com.pikaqiu.familybucket.entities.UserInfo;
 import com.pikaqiu.familybucket.enums.NoticeEnum;
-import com.pikaqiu.familybucket.exception.UserException;
+import com.pikaqiu.familybucket.service.handle.exception.UserException;
 import com.pikaqiu.familybucket.feign.FeignNoticeService;
 import com.pikaqiu.familybucket.idworker.IdGenerator;
 import com.pikaqiu.familybucket.repository.AuthUserRepository;

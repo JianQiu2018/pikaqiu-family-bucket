@@ -1,4 +1,4 @@
-package com.pikaqiu.familybucket.exception;
+package com.pikaqiu.familybucket.service.handle.exception;
 
 /**
  * Description:
