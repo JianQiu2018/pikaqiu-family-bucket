@@ -1,5 +1,6 @@
 package com.pikaqiu.familybucket.api;
 
+import com.pikaqiu.familybucket.annotation.ResponseResultBody;
 import com.pikaqiu.familybucket.constants.Constants;
 import com.pikaqiu.familybucket.dto.ArticleInfoDTO;
 import com.pikaqiu.familybucket.dto.HttpResponse;
@@ -25,6 +26,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+@ResponseResultBody
 public class ArticleInfoController {
 
     @Autowired
@@ -40,11 +42,11 @@ public class ArticleInfoController {
      * @apiUse size
      */
     @GetMapping(value = Constants.URL_API_ADMIN_PREFIX + "/article/getHomeArticleList")
-    public Mono<HttpResponse<Page<ArticleInfo>>> getHomeArticleList(PageRequestDTO pageRequestDto, ArticleInfoDTO articleInfoDto) {
+    public Mono<Page<ArticleInfo>> getHomeArticleList(PageRequestDTO pageRequestDto, ArticleInfoDTO articleInfoDto) {
         if (log.isDebugEnabled()) {
             log.debug("Request /api/admin/article/getHomeArticleList [GET].");
         }
-        return Mono.just(new HttpResponse<Page<ArticleInfo>>().setData(articleInfoService.getHomeArticleList(articleInfoDto, PageRequest.of(pageRequestDto.getPage(), pageRequestDto.getSize(), Sort.by(Sort.Direction.ASC, "createTime")))));
+        return Mono.just(articleInfoService.getHomeArticleList(articleInfoDto, PageRequest.of(pageRequestDto.getPage(), pageRequestDto.getSize(), Sort.by(Sort.Direction.ASC, "createTime"))));
     }
 
     /**
@@ -90,11 +92,11 @@ public class ArticleInfoController {
      * @apiParam {String} title 发布标题
      */
     @PostMapping(value = Constants.URL_API_ADMIN_PREFIX + "/article/addArticle")
-    public Mono<HttpResponse<Boolean>> addArticle(@RequestBody ArticleInfoDTO articleInfoDto) {
+    public Mono<Boolean> addArticle(@RequestBody ArticleInfoDTO articleInfoDto) {
         if (log.isDebugEnabled()) {
             log.debug("Request /api/admin/article/addArticle [Post].");
         }
-        return articleInfoService.addArticle(articleInfoDto).map(data -> new HttpResponse<Boolean>().setData(data));
+        return articleInfoService.addArticle(articleInfoDto);
     }
 
     /**

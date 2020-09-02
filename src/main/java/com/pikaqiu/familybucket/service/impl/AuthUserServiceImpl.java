@@ -98,7 +98,7 @@ public class AuthUserServiceImpl implements AuthUserService {
                 authUserRepository.save(authUser);
                 UserInfo userInfo = userInfoRepository.findByUserId(authUser.getId());
                 //调用远程发布消息
-                feignNoticeService.publishNotice(commonService.publishNotice(userInfo.getUserName()+"上线啦~","用户登录成功",NoticeEnum.LOGIN.getModuleType(), Constants.TYPE_ONE,"",new Long[]{userInfo.getUserId()}));
+                //feignNoticeService.publishNotice(commonService.publishNotice(userInfo.getUserName()+"上线啦~","用户登录成功",NoticeEnum.LOGIN.getModuleType(), Constants.TYPE_ONE,"",new Long[]{userInfo.getUserId()}));
                 return Mono.just(getToken(authUserOptional.get()));
             }
         }else{

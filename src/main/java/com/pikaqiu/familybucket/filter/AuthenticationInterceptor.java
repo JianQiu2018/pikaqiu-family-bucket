@@ -14,6 +14,7 @@ import com.pikaqiu.familybucket.annotation.PassToken;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.util.Assert;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,9 +62,10 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             }
         }
         // 执行认证
-        if (token == null) {
+        /*if (token == null) {
             throw new UserException("无token,请重新登录", ErrorCode.NO_TOKEN);
-        }
+        }*/
+        Assert.notNull(token, "无token,请重新登录");
         // 获取token中的 userId
         String userId;
         try {
