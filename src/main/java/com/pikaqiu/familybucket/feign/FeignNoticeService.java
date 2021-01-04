@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  * @author PikaQiu
  * @date 2019/8/23 23:59
  */
-@FeignClient(name = "notice-service", fallbackFactory = FeignNoticeServiceFallbackImpl.class)
+//@FeignClient(name = "notice-service", fallbackFactory = FeignNoticeServiceFallbackImpl.class)
 public interface FeignNoticeService {
 
     @PostMapping(Constants.URL_INTERNAL_PREFIX + Constants.URL_API_PREFIX + "/notice/publish")

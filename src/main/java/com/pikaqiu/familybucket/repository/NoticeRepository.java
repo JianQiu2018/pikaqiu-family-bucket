@@ -1,6 +1,6 @@
 package com.pikaqiu.familybucket.repository;
 
-import com.pikaqiu.familybucket.dynamicsource.DataSourceExchange;
+import com.pikaqiu.familybucket.annotation.DataSourceExchange;
 import com.pikaqiu.familybucket.entities.Notice;
 import org.springframework.data.jpa.repository.JpaRepository;
 

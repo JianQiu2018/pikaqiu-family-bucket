@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Import;
  * 按请求粒度负载均衡(使用MongoDB存储事务日志):需引入SpringCloudConfiguration;
  * 按事务粒度负载均衡(使用文件系统存储事务日志):需引入SpringCloudSecondaryConfiguration;
  */
-@ComponentScan({"com.pikaqiu.familybucket"/*, "com.pikaqiu.starter.autoconfiguration"*/}) //扫描自定义starter的bean文件目录
 //@Import({/*DynamicDataSourceRegister.class, */SpringCloudSecondaryConfiguration.class}) //springboot版本太高有兼容性问题
 @EnableFeignClients
 @EnableEurekaClient
