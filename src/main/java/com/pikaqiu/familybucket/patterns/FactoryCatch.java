@@ -1,12 +1,9 @@
 package com.pikaqiu.familybucket.patterns;
 
-import com.alibaba.fastjson.JSONObject;
-import com.pikaqiu.familybucket.dto.AuthUserDTO;
 import com.pikaqiu.familybucket.patterns.decorator.ComponentCatch;
 import com.pikaqiu.familybucket.patterns.decorator.FirstCatch;
 import com.pikaqiu.familybucket.patterns.decorator.SecondCatch;
 import com.pikaqiu.familybucket.patterns.decorator.ThiredCatch;
-import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,9 +24,9 @@ public class FactoryCatch {
         return thiredCatch;
     }
 
-    public static final String escapeHtml4(String str) {
-        return StringEscapeUtils.escapeHtml4(str);
-    }
+//    public static final String escapeHtml4(String str) {
+//        return StringEscapeUtils.escapeHtml4(str);
+//    }
 
     public static void main(String[] args) {
         /*ComponentCatch getComponentCatch = getComponentCatch();
@@ -51,7 +48,7 @@ public class FactoryCatch {
         /*authUserDTO = JSONObject.parseObject(filterStr, AuthUserDTO.class);
         System.out.println("---: " + authUserDTO.toString())*/;
 
-        AuthUserDTO authUserDTO = new AuthUserDTO();
+        /*AuthUserDTO authUserDTO = new AuthUserDTO();
         authUserDTO.setPassword("税务受理,缴款中,增量/房业务,买卖,业务号:23301012787-20201111101420,坐落:未来科技城150号");
         authUserDTO.setUserName("18296158343<script>'al'ert(1)</script>");
         authUserDTO.setPhoneNumber("123,12323");
@@ -59,12 +56,11 @@ public class FactoryCatch {
         String str = JSONObject.toJSONString(authUserDTO);
         System.out.println("Str: " + str);
 
-//
         String str2 = escapeHtml4(str);
         System.out.println(str2);
 
         String filterStr = StringFilter(str2);
-        System.out.println(filterStr);
+        System.out.println(filterStr);*/
 
 
     }
