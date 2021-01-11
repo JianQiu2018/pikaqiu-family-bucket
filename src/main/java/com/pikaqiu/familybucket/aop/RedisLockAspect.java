@@ -25,7 +25,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 功能描述：
+ * 功能描述： Redis分布式锁实现全局控制
  *
  * @Author qiujian
  * @Date 2021/1/4
@@ -45,11 +45,12 @@ public class RedisLockAspect {
     private static ConcurrentLinkedQueue<RedisLockDefinitionHolder> holderList = new ConcurrentLinkedQueue();
 
     /**
-     * 线程池，维护keyAliveTime
+     * 定时器线程池，维护keyAliveTime(线程长度INTEGER.MAX_VALUE)
      */
     private static final ScheduledExecutorService SCHEDULER = new ScheduledThreadPoolExecutor(1,
             new BasicThreadFactory.Builder().namingPattern("redisLock-schedule-pool").daemon(true).build());
 
+    //项目启动时加载
     {
         // 两秒执行一次「续时」操作（构造代码块）
         SCHEDULER.scheduleAtFixedRate(() -> {
@@ -122,6 +123,7 @@ public class RedisLockAspect {
                     currentThread, annotation.tryCount()));
             // 执行业务操作
             result = pjp.proceed();
+            logger.info("currentThread state [{}]", currentThread.isAlive());
             // 线程被中断，抛出异常，中断此次请求
             /*if (currentThread.isInterrupted()) {
                 throw new InterruptedException("You had been interrupted =-=");

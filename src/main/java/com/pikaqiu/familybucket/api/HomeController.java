@@ -43,7 +43,7 @@ public class HomeController {
     public String testRedisLock(@RequestParam("userId") Long userId) {
         try {
             log.info("睡眠执行前");
-            Thread.sleep(12000);
+            Thread.sleep(4000);
             log.info("睡眠执行后");
         } catch (Exception e) {
             // log error
