@@ -20,4 +20,6 @@ public interface UploadFileService {
      */
     Mono<String> save(MultipartFile file) throws IOException;
 
+    Mono<String> excelUpload(MultipartFile file) throws IOException;
+
 }

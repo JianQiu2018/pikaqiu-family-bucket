@@ -38,5 +38,13 @@ public class UploadController {
         return uploadFileService.save(file).map(data -> new HttpResponse<String>().setData(data));
     }
 
+    @PostMapping(value = Constants.URL_API_ADMIN_PREFIX + "/excel/upload")
+    public Mono<HttpResponse<String>> excelUpload(MultipartFile file) throws Exception {
+        if (log.isDebugEnabled()) {
+            log.debug("Request /excel/upload [POST].");
+        }
+        return uploadFileService.save(file).map(data -> new HttpResponse<String>().setData(data));
+    }
+
 
 }
