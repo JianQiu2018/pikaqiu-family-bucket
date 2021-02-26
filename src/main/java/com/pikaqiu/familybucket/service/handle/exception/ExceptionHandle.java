@@ -36,8 +36,8 @@ public class ExceptionHandle {
 
     @ExceptionHandler(value = Exception.class)
     public HttpResponse handleUnknowException(Exception e) {
-        log.error("异常ERROR: [{}]", e.getMessage());
-        return new HttpResponse().setErrorMessage(-100, "异常ERROR[" + e.getMessage() + "]");
+        log.error("统一异常ERROR: [{}]", e.getCause().getMessage());
+        return new HttpResponse().setErrorMessage(-100, "异常ERROR[" + e.getCause().getMessage() + "]");
     }
 
 }
