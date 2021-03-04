@@ -65,7 +65,7 @@ public class FactoryCatch {
         String filterStr = StringFilter(str2);
         System.out.println(filterStr);*/
 
-        String dob2= "2002-12-32";
+        /*String dob2= "2002-12-32";
         Date dateofbirth2 = null;
         SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -74,8 +74,15 @@ public class FactoryCatch {
             System.out.println(dateofbirth2);
         } catch (Exception e) {
             System.out.println("格式不正常");
-        }
+        }*/
 
+        String str = "^-?[0-9]+(.[0-9]{1,6})?$";
+        String value = "3.1";
+        if(value.matches(str)){
+            System.out.println("匹配");
+        }else {
+            System.out.println("不匹配");
+        }
 
     }
 
